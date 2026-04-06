@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f7f7fb;
+  color: #1f2937;
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem;
+  width: min(460px, 95vw);
+  box-shadow: 0 6px 20px rgba(31, 41, 55, 0.06);
+}
+
+form {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+input,
+button,
+.google-btn {
+  padding: 0.7rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+}
+
+button,
+.google-btn {
+  border: none;
+  background: #111827;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.google-btn {
+  display: block;
+}
+
+.success {
+  color: #047857;
+}
+
+.error {
+  color: #b91c1c;
+}
+
+pre {
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 0.75rem;
+  overflow: auto;
+}
