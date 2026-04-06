@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Welcome 🎉</h1>
+      <div class="card">
+        <pre id="profile">Loading profile...</pre>
+        <button id="logout">Logout</button>
+      </div>
+    </main>
+
+    <script>
+      const profile = document.getElementById('profile');
+      const logout = document.getElementById('logout');
+
+      fetch('/api/me')
+        .then((res) => {
+          if (!res.ok) throw new Error('Not authenticated');
+          return res.json();
+        })
+        .then((data) => {
+          profile.textContent = JSON.stringify(data.user, null, 2);
+        })
+        .catch(() => {
+          window.location.href = '/';
+        });
+
+      logout.addEventListener('click', async () => {
+        await fetch('/auth/logout', { method: 'POST' });
+        window.location.href = '/';
+      });
+    </script>
+  </body>
+</html>

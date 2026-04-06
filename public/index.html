@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Signup Platform</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Create your account</h1>
+      <p>Sign up with Google or verify your email with OTP.</p>
+
+      <section class="card">
+        <a class="google-btn" href="/auth/google">Continue with Google</a>
+      </section>
+
+      <section class="card">
+        <h2>Email OTP Signup</h2>
+        <form id="request-otp-form">
+          <input id="email" type="email" placeholder="Enter your email" required />
+          <button type="submit">Send OTP</button>
+        </form>
+
+        <form id="verify-otp-form">
+          <input id="otp" type="text" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit OTP" required />
+          <button type="submit">Verify OTP & Sign up</button>
+        </form>
+
+        <p id="status"></p>
+      </section>
+    </main>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
